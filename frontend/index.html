@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational RAG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Conversational RAG with PDF Upload</h1>
+            <p>Upload PDFs and chat with the content</p>
+        </header>
+
+        <div class="session-setup">
+            <label for="session-id">Session ID:</label>
+            <input type="text" id="session-id" placeholder="Enter a unique session ID" value="default-session">
+        </div>
+
+        <div class="upload-section">
+            <form id="upload-form">
+                <input type="file" id="pdf-files" accept=".pdf" multiple required>
+                <button type="submit">Upload & Process PDFs</button>
+            </form>
+            <p id="upload-status"></p>
+        </div>
+
+        <div class="chat-section" id="chat-section">
+            <div class="chat-window" id="chat-window">
+                <!-- Messages will be appended here -->
+                <div class="message assistant">
+                    <p>Please upload one or more PDFs to begin.</p>
+                </div>
+            </div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Ask a question..." disabled>
+                <button type="submit" disabled>Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
